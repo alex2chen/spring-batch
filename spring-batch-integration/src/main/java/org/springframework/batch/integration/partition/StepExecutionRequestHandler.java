@@ -61,6 +61,7 @@ public class StepExecutionRequestHandler {
 		}
 
 		try {
+			StepSynchronizationManager.register(currentStepExecution);
 			step.execute(stepExecution);
 		}
 		catch (JobInterruptedException e) {
